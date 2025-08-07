@@ -34,7 +34,7 @@ body {
 
 #map {
 	width: 100%;
-	max-width: 1000px; /* ⬅️ or 1100px to match NYT */
+	max-width: 1500px; /* ⬅️ or 1100px to match NYT */
 	padding: 0 1rem; /* some horizontal breathing space */
 	background-color: #fff;
 }
