@@ -1,0 +1,52 @@
+body {
+	margin: 0;
+	background-color: #fff;
+	font-family: "Merriweather", serif;
+}
+
+.headline-container {
+	text-align: center;
+	padding: 7rem 1rem 2rem;
+}
+
+.tariff-headline {
+	font-size: 2.8rem;
+	font-weight: 900;
+	max-width: 800px;
+	margin: 0 auto;
+	color: #1a1a1a;
+	line-height: 1.2;
+}
+
+.map-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 4rem;
+}
+
+#map {
+	width: 100%;
+	max-width: 1000px; /* ⬅️ or 1100px to match NYT */
+	padding: 0 1rem; /* some horizontal breathing space */
+	background-color: #fff;
+}
+
+#map svg {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	aspect-ratio: 2 / 1; /* ⬅️ Maintain landscape ratio */
+}
+
+.tooltip {
+	position: absolute;
+	background: white;
+	padding: 6px 10px;
+	border: 1px solid #ccc;
+	pointer-events: none;
+	font-size: 0.85rem;
+	border-radius: 4px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
