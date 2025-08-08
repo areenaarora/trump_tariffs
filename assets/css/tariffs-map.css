@@ -25,6 +25,8 @@ body {
 	line-height: 1.2;
 }
 
+/* MAP STYLES */
+
 .map-wrapper {
 	display: flex;
 	justify-content: center;
@@ -64,7 +66,7 @@ body {
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 1rem;
-	margin: 2rem auto;
+	margin: 1rem auto;
 	font-family: "Merriweather", serif;
 	font-size: 0.95rem;
 	max-width: 800px;
@@ -80,6 +82,30 @@ body {
 	width: 18px;
 	height: 18px;
 	border: 1px solid #aaa;
+}
+
+/* TEXT BODY STYLES */
+.body-text {
+	color: #000000;
+	font-family: "Merriweather", serif;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 4rem 1.5rem;
+	line-height: 1.7;
+	font-size: 1.125rem;
+}
+
+.body-text h2 {
+	font-size: 2.5rem;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 2rem;
+	color: #f2f2f2;
+	letter-spacing: 0.5px;
+}
+
+.body-text p {
+	margin-bottom: 1.8rem;
 }
 
 /* === Responsive: Headline + Publish Date === */
