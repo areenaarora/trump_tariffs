@@ -234,15 +234,14 @@ Promise.all([
 
 	const euValue = countryData.get("European Union") ?? null;
 
-	// Buckets: 10, 11–15, 16–20, 21–25, 26–30, 31–35, 36+
-	const colorScale = d3.scaleThreshold().domain([11, 16, 21, 26, 31, 36]).range([
+	// Buckets: 10, 11–15, 16–25, 26–35, 36–45, 45+
+	const colorScale = d3.scaleThreshold().domain([11, 16, 26, 36, 46]).range([
 		"#fff5f0", // exactly 10 (baseline bucket)
 		"#fee0d2", // 11–15
-		"#fcbba1", // 16–20
-		"#fc9272", // 21–25
-		"#fb6a4a", // 26–30
-		"#de2d26", // 31–35
-		"#7f0000", // 36+
+		"#fcbba1", // 16–25
+		"#fc9272", // 26–35
+		"#de2d26", // 36–45
+		"#7f0000", // 45+
 	]);
 
 	const geojson = topojson.feature(topoData, topoData.objects.layer);
@@ -302,19 +301,18 @@ Promise.all([
 		.style("text-align", "center");
 
 	const legendItems = [
-		{ label: "10", color: "#fff5f0" },
-		{ label: "11–15", color: "#fee0d2" },
-		{ label: "16–20", color: "#fcbba1" },
-		{ label: "21–25", color: "#fc9272" },
-		{ label: "26–30", color: "#fb6a4a" },
-		{ label: "31–35", color: "#de2d26" },
-		{ label: "36+", color: "#7f0000" },
+		{ label: "10%", color: "#fff5f0" },
+		{ label: "11–15%", color: "#fee0d2" },
+		{ label: "16–25%", color: "#fcbba1" },
+		{ label: "26–35%", color: "#fc9272" },
+		{ label: "36–45%", color: "#de2d26" },
+		{ label: "45%+", color: "#7f0000" },
 	];
 
 	const legendGrid = legend
 		.append("div")
 		.style("display", "grid")
-		.style("grid-template-columns", "repeat(7, auto)")
+		.style("grid-template-columns", "repeat(6, auto)")
 
 		.style("gap", "10px")
 		.style("align-items", "center");

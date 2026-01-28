@@ -151,8 +151,8 @@ body {
 	/* Override inline grid styles from JS */
 	.legend-container > div:last-child {
 		display: grid !important;
-		grid-template-columns: repeat(4, auto) !important;
-		gap: 6px 12px !important;
+		grid-template-columns: repeat(3, auto) !important;
+		gap: 6px 16px !important;
 		justify-content: center !important;
 	}
 
