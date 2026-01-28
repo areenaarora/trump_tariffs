@@ -1,5 +1,11 @@
-const width = window.innerWidth;
-const height = width / 1.8; // maintain aspect ratio directly
+// ---- sizing: use container width (fixes "pushed right") ----
+const container = document.querySelector("#map");
+const width = Math.floor(container.getBoundingClientRect().width);
+const isMobile = width < 640;
+const height = isMobile ? width / 1.1 : width / 1.8;
+
+// Publishing date cutoff (as-of)
+const AS_OF = new Date("2026-01-31"); // Jan 31, 2026
 
 const svg = d3
 	.select("#map")
@@ -11,104 +17,322 @@ const svg = d3
 
 const projection = d3
 	.geoNaturalEarth1()
-	.center([0, 10]) // Indian POV
-	.scale(width / 1.6 / Math.PI)
+	.center([0, 10])
+	.scale((isMobile ? width / 1.45 : width / 1.6) / Math.PI)
 	.translate([width / 2, height / 2]);
 
 const path = d3.geoPath().projection(projection);
 
 const tooltip = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0);
 
-// Load both files
-Promise.all([d3.json("assets/india.json"), d3.csv("assets/tariffs_data.csv")]).then(
-	([topoData, csvData]) => {
-		console.log("✅ Map and CSV loaded");
+// ---- helpers: normalization + EU fallback ----
+const EU_MEMBERS = new Set([
+	"Austria",
+	"Belgium",
+	"Bulgaria",
+	"Croatia",
+	"Cyprus",
+	"Czechia",
+	"Denmark",
+	"Estonia",
+	"Finland",
+	"France",
+	"Germany",
+	"Greece",
+	"Hungary",
+	"Ireland",
+	"Italy",
+	"Latvia",
+	"Lithuania",
+	"Luxembourg",
+	"Malta",
+	"Netherlands",
+	"Poland",
+	"Portugal",
+	"Romania",
+	"Slovakia",
+	"Slovenia",
+	"Spain",
+	"Sweden",
+]);
 
-		const countryData = new Map();
-		let maxValue = 0;
+const NAME_FIXES = new Map([
+	["United States of America", "United States"],
+	["USA", "United States"],
+	["US", "United States"],
 
-		csvData.forEach(d => {
-			const val = +d.total_mapping;
-			countryData.set(d.Country.trim(), val);
-			if (val > maxValue) maxValue = val;
-		});
+	["United Kingdom", "Britain"],
+	["UK", "Britain"],
 
-		// Gradient color scale (light to dark red)
-		const colorScale = d3.scaleSequential().domain([0, maxValue]).interpolator(d3.interpolateReds);
+	["Russian Federation", "Russia"],
 
-		const geojson = topojson.feature(topoData, topoData.objects.layer);
+	["Korea, Rep.", "South Korea"],
+	["Korea, Republic of", "South Korea"],
+	["Republic of Korea", "South Korea"],
+	["Korea, Dem. People’s Rep.", "North Korea"],
+	["Korea, Democratic People's Republic of", "North Korea"],
 
-		svg
-			.selectAll("path")
-			.data(geojson.features)
-			.join("path")
-			.attr("d", path)
-			.attr("fill", d => {
-				const name = d.properties.name?.trim();
-				const value = countryData.get(name);
-				return value != null ? colorScale(value) : "#D3D3D3"; // grey if no data
-			})
-			.attr("stroke", "#333")
-			.attr("stroke-width", 0.5)
-			.on("mouseover", function (event, d) {
-				const name = d.properties.name;
-				const value = countryData.get(name);
-				tooltip.transition().duration(100).style("opacity", 1);
-				tooltip
-					.html(`<strong>${name}</strong><br/>Tariff: ${value ?? "No data"}`)
-					.style("left", event.pageX + 10 + "px")
-					.style("top", event.pageY - 28 + "px");
-			})
-			.on("mouseout", () => tooltip.transition().duration(100).style("opacity", 0));
+	["Viet Nam", "Vietnam"],
+	["Türkiye", "Turkey"],
+	["Turkiye", "Turkey"],
 
-		const legend = d3.select("#legend").html(""); // clear existing
-		const legendWidth = 300;
-		const legendHeight = 12;
+	["Czech Republic", "Czechia"],
 
-		// Title
-		legend
-			.append("div")
-			.text("Tariff Rate")
-			.style("font-weight", "bold")
-			.style("font-size", "0.9rem")
-			.style("margin-bottom", "4px")
-			.style("text-align", "center");
+	["Iran, Islamic Republic of", "Iran"],
+	["Venezuela, RB", "Venezuela"],
+	["Egypt, Arab Rep.", "Egypt"],
+	["Syrian Arab Republic", "Syria"],
 
-		// Outer box
-		const legendBox = legend
-			.append("div")
-			.style("border", "1px solid #ccc")
-			.style("padding", "6px 10px")
-			.style("display", "inline-block");
+	["Bolivia (Plurinational State of)", "Bolivia"],
+	["Tanzania, United Republic of", "Tanzania"],
 
-		// Gradient with border
-		const canvasWrapper = legendBox
-			.append("div")
-			.style("border", "1px solid #ccc")
-			.style("padding", "0")
-			.style("display", "block");
+	["Congo, Dem. Rep.", "Democratic Republic of the Congo"],
+	["Dem. Rep. Congo", "Democratic Republic of the Congo"],
+	["Democratic Republic of Congo", "Democratic Republic of the Congo"],
+	["Congo (Kinshasa)", "Democratic Republic of the Congo"],
+	["DR Congo", "Democratic Republic of the Congo"],
 
-		const canvas = canvasWrapper
-			.append("canvas")
-			.attr("width", legendWidth)
-			.attr("height", 1)
-			.style("width", legendWidth + "px")
-			.style("height", legendHeight + "px")
-			.style("display", "block");
+	["Congo, Rep.", "Republic of the Congo"],
+	["Congo (Brazzaville)", "Republic of the Congo"],
 
-		const ctx = canvas.node().getContext("2d");
-		for (let i = 0; i < legendWidth; ++i) {
-			ctx.fillStyle = colorScale((i / legendWidth) * maxValue);
-			ctx.fillRect(i, 0, 1, 1);
+	["Lao PDR", "Laos"],
+	["Lao People's Democratic Republic", "Laos"],
+
+	["Côte d’Ivoire", "Côte d'Ivoire"],
+	["Cote dIvoire", "Côte d'Ivoire"],
+]);
+
+function normName(s) {
+	if (!s) return "";
+	let t = String(s).trim();
+	t = t.replace(/[’‘]/g, "'").replace(/\s+/g, " ");
+	return NAME_FIXES.get(t) ?? t;
+}
+
+// Pull a numeric % from the "Rate" column.
+function parseRatePercent(rateStr) {
+	if (rateStr == null) return NaN;
+	const s = String(rateStr).trim();
+	if (!s) return NaN;
+	if (s.toUpperCase() === "TBD") return NaN;
+	const m = s.match(/(\d+(\.\d+)?)/);
+	return m ? +m[1] : NaN;
+}
+
+// Parse "Date in effect" like "8/7/2025" (m/d/yyyy)
+function parseMDY(dateStr) {
+	if (!dateStr) return null;
+	const s = String(dateStr).trim();
+	if (!s) return null;
+
+	const upper = s.toUpperCase();
+	if (
+		upper === "TBD" ||
+		upper.includes("PENDING") ||
+		upper.includes("UNDER INVESTIGATION") ||
+		upper.includes("REPORT DUE")
+	)
+		return null;
+
+	const parts = s.split("/");
+	if (parts.length !== 3) return null;
+	const [m, d, y] = parts.map(x => parseInt(x, 10));
+	if (!m || !d || !y) return null;
+
+	return new Date(y, m - 1, d);
+}
+
+// “Base” country-wide headline rate
+const BASE_TARGET_REGEX = /^Non-reciprocal trade:\s*Individual rate$/i;
+
+// “Additive” items on top of base.
+// ✅ Added: Government of <country> policies  (fixes Brazil = 10 + 40)
+// Keep this list tight to avoid Canada-style over-summing.
+const ADDITIVE_TARGET_REGEXES = [
+	/russian oil/i,
+	/secondary/i,
+	/penalty/i,
+	/^Government of .* policies/i,
+];
+
+// Default for countries with no specific row: global baseline 10% (except US)
+const DEFAULT_BASELINE = 10;
+
+Promise.all([
+	d3.json("assets/india.json"),
+	d3.csv("assets/Trump_tariff_tracker-All_actions.csv"),
+]).then(([topoData, csvData]) => {
+	console.log("✅ Map and CSV loaded");
+
+	// country -> { baseRates: number[], additiveByTarget: Map(target -> number), otherMax: number }
+	const countryAgg = new Map();
+	let csvGlobalBaseline = null;
+
+	for (const row of csvData) {
+		const geography = normName(row.Geography ?? row.geography ?? row.Country ?? row.country);
+		const target = String(row.Target ?? row.target ?? "").trim();
+		if (!geography) continue;
+
+		const eff = parseMDY(
+			row["Date in effect"] ?? row["Date in Effect"] ?? row.Effective ?? row.effective,
+		);
+		if (!eff || eff > AS_OF) continue;
+
+		const rate = parseRatePercent(row.Rate ?? row.rate);
+		if (!Number.isFinite(rate)) continue;
+
+		// capture global baseline if present
+		if (geography === "Global" && /global baseline/i.test(target)) {
+			csvGlobalBaseline = rate;
+			continue;
 		}
 
-		// Label row
-		legendBox
+		// ignore "Global" for country shading
+		if (geography === "Global") continue;
+
+		if (!countryAgg.has(geography)) {
+			countryAgg.set(geography, {
+				baseRates: [],
+				additiveByTarget: new Map(),
+				otherMax: -Infinity,
+			});
+		}
+
+		const bucket = countryAgg.get(geography);
+		if (rate > bucket.otherMax) bucket.otherMax = rate;
+
+		// base
+		if (BASE_TARGET_REGEX.test(target)) {
+			bucket.baseRates.push(rate);
+			continue;
+		}
+
+		// additive
+		const isAdditive = ADDITIVE_TARGET_REGEXES.some(rx => rx.test(target));
+		if (isAdditive) {
+			const prev = bucket.additiveByTarget.get(target);
+			if (prev == null || rate > prev) bucket.additiveByTarget.set(target, rate);
+		}
+	}
+
+	const effectiveBaseline = Number.isFinite(csvGlobalBaseline)
+		? csvGlobalBaseline
+		: DEFAULT_BASELINE;
+
+	// Final: country -> headline
+	const countryData = new Map();
+	for (const [country, b] of countryAgg.entries()) {
+		const base = b.baseRates.length ? Math.max(...b.baseRates) : null;
+		const additiveSum = Array.from(b.additiveByTarget.values()).reduce((a, v) => a + v, 0);
+
+		// base + additive; else fallback to max known rate
+		const value =
+			base != null ? base + additiveSum : Number.isFinite(b.otherMax) ? b.otherMax : null;
+
+		if (value != null && Number.isFinite(value)) countryData.set(country, value);
+	}
+
+	const euValue = countryData.get("European Union") ?? null;
+
+	// Buckets: 10, 11–15, 16–20, 21–25, 26–30, 31–35, 36+
+	const colorScale = d3.scaleThreshold().domain([11, 16, 21, 26, 31, 36]).range([
+		"#fff5f0", // exactly 10 (baseline bucket)
+		"#fee0d2", // 11–15
+		"#fcbba1", // 16–20
+		"#fc9272", // 21–25
+		"#fb6a4a", // 26–30
+		"#de2d26", // 31–35
+		"#7f0000", // 36+
+	]);
+
+	const geojson = topojson.feature(topoData, topoData.objects.layer);
+
+	function getValueForFeature(d) {
+		const topoName = normName(d.properties.name);
+
+		let value = countryData.get(topoName);
+
+		// EU fallback
+		if (value == null && euValue != null && EU_MEMBERS.has(topoName)) value = euValue;
+
+		// default baseline for “no row” countries (except US)
+		if (value == null && topoName !== "United States") value = effectiveBaseline;
+
+		// Treat 0% as "no tariff applied" → show grey
+		if (value === 0) return null;
+		return value;
+	}
+
+	svg
+		.selectAll("path")
+		.data(geojson.features)
+		.join("path")
+		.attr("d", path)
+		.attr("fill", d => {
+			const v = getValueForFeature(d);
+			return v != null ? colorScale(v) : "#D3D3D3";
+		})
+		.attr("stroke", "#333")
+		.attr("stroke-width", 0.6)
+		.attr("stroke-linejoin", "round")
+		.attr("stroke-linecap", "round")
+		.attr("vector-effect", "non-scaling-stroke")
+		.on("mouseover", function (event, d) {
+			const name = normName(d.properties.name);
+			const value = getValueForFeature(d);
+			const displayValue = value != null ? `${d3.format(".1f")(value)}%` : "No data";
+
+			tooltip.transition().duration(100).style("opacity", 1);
+			tooltip
+				.html(`<strong>${name}</strong><br/>Tariff: ${displayValue}`)
+				.style("left", event.pageX + 10 + "px")
+				.style("top", event.pageY - 28 + "px");
+		})
+		.on("mouseout", () => tooltip.transition().duration(100).style("opacity", 0));
+
+	// ---- legend ----
+	const legend = d3.select("#legend").html("");
+
+	legend
+		.append("div")
+		.text("Tariff Rate")
+		.style("font-weight", "bold")
+		.style("font-size", "0.9rem")
+		.style("margin-bottom", "6px")
+		.style("text-align", "center");
+
+	const legendItems = [
+		{ label: "10", color: "#fff5f0" },
+		{ label: "11–15", color: "#fee0d2" },
+		{ label: "16–20", color: "#fcbba1" },
+		{ label: "21–25", color: "#fc9272" },
+		{ label: "26–30", color: "#fb6a4a" },
+		{ label: "31–35", color: "#de2d26" },
+		{ label: "36+", color: "#7f0000" },
+	];
+
+	const legendGrid = legend
+		.append("div")
+		.style("display", "grid")
+		.style("grid-template-columns", "repeat(7, auto)")
+
+		.style("gap", "10px")
+		.style("align-items", "center");
+
+	legendItems.forEach(d => {
+		const item = legendGrid
 			.append("div")
 			.style("display", "flex")
-			.style("justify-content", "space-between")
-			.style("font-size", "0.8rem")
-			.style("margin-top", "4px")
-			.html(`<span>Low</span><span>High</span>`);
-	},
-);
+			.style("align-items", "center")
+			.style("gap", "6px");
+
+		item
+			.append("div")
+			.style("width", "14px")
+			.style("height", "14px")
+			.style("background", d.color)
+			.style("border", "1px solid #999");
+
+		item.append("span").style("font-size", "0.75rem").text(d.label);
+	});
+});

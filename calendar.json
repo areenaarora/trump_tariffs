@@ -1,0 +1,1462 @@
+{
+	"name": "Tariff Calendar",
+	"author": "GBE Atlantic Council",
+	"template": "@flourish/calendar",
+	"version": "2.6.1",
+	"published_at": "2025-12-01T15:28:27.453Z",
+	"state": {
+		"color": {
+			"bin_count": 1,
+			"bin_mode": "fixed",
+			"bin_thresholds": "",
+			"binning": true,
+			"categorical_palette": [
+				"#005596",
+				"#f2783e",
+				"#000000",
+				"#000478",
+				"#f2f2f2",
+				"#ffc02e",
+				"#2fbea3",
+				"#6f9a1a",
+				"#234c6a"
+			],
+			"diverging_custom_domain": false,
+			"diverging_custom_mid": "#5d62df",
+			"diverging_custom_min": "#044d71",
+			"diverging_domain_max": 5,
+			"diverging_domain_mid": 3,
+			"diverging_domain_min": 1,
+			"diverging_palette": "RdBu",
+			"numeric_type": "sequential",
+			"palette": [
+				"#F2783E",
+				"#000000",
+				"#005596",
+				"#000478",
+				"#F2F2F2",
+				"#FFC02E",
+				"#2FBEA3",
+				"#6F9A1A",
+				"#234C6A"
+			],
+			"sequential_custom_domain": false,
+			"sequential_custom_max": "#005596",
+			"sequential_domain_max": 5,
+			"sequential_domain_min": 1,
+			"sequential_palette": "Blues",
+			"sequential_reverse": false
+		},
+		"colors": {
+			"categorical_palette": [
+				"#F2783E",
+				"#000000",
+				"#005596",
+				"#000478",
+				"#F2F2F2",
+				"#FFC02E",
+				"#2FBEA3",
+				"#6F9A1A",
+				"#234C6A"
+			],
+			"palette": [
+				"#F2783E",
+				"#000000",
+				"#005596",
+				"#000478",
+				"#F2F2F2",
+				"#FFC02E",
+				"#2FBEA3",
+				"#6F9A1A",
+				"#234C6A"
+			]
+		},
+		"filter_control": {
+			"button_group": false,
+			"control_styles": true,
+			"control_type": "buttons",
+			"sort": false
+		},
+		"filter_show_all": true,
+		"height_mode": "auto",
+		"icon_overflow_text_mode": "custom",
+		"layout": {
+			"body_font": {
+				"name": "Proxima Nova",
+				"url": "https://public.flourish.studio/fonts/cde7acbe-5f3d-45ea-b6f0-ec4128ae68b0/stylesheet.css?family=Proxima+Nova"
+			},
+			"footer_logo_height": 2,
+			"footer_logo_src": "https://public.flourish.studio/uploads/6629a41f-38e3-4652-bf37-75c610e0c473.png",
+			"footer_text_size": 0.7,
+			"header_text_styling": false,
+			"subtitle": "<i>Click on a date to see the announcement or policy </i>",
+			"subtitle_color": "#333333",
+			"subtitle_size": "1.4",
+			"subtitle_size_custom": 0.9,
+			"subtitle_styling": true,
+			"title": "Tariff calendar",
+			"title_color": "#333333",
+			"title_font": {
+				"name": "Proxima Nova Bold",
+				"url": "https://public.flourish.studio/fonts/cde7acbe-5f3d-45ea-b6f0-ec4128ae68b0/stylesheet.css?family=Proxima+Nova+Bold"
+			},
+			"title_size": "2",
+			"title_size_custom": 1.25,
+			"title_styling": true
+		},
+		"layout_mode": "year",
+		"legend_continuous": {
+			"binned_label_custom": "",
+			"binned_label_mode": "thresholds",
+			"legend_max": null,
+			"legend_min": null,
+			"show_legend": false
+		},
+		"map_categorical_colors": {
+			"palette": [
+				"#F2783E",
+				"#000000",
+				"#005596",
+				"#000478",
+				"#F2F2F2",
+				"#FFC02E",
+				"#2FBEA3",
+				"#6F9A1A",
+				"#234C6A"
+			]
+		},
+		"panel_metadata_mode": "inline",
+		"point_categorical_colors": {
+			"palette": [
+				"#F2783E",
+				"#000000",
+				"#005596",
+				"#000478",
+				"#F2F2F2",
+				"#FFC02E",
+				"#2FBEA3",
+				"#6F9A1A",
+				"#234C6A"
+			]
+		},
+		"popup": {
+			"show_panel_styles": true
+		},
+		"popup_enabled": true,
+		"today_enabled": true,
+		"url_state": {
+			"enabled": true
+		},
+		"week_start": "monday",
+		"x": {
+			"line_and_tick_color": "#c0c0c0",
+			"line_and_tick_width": 0.05,
+			"tick_label_angle": "0",
+			"tick_label_color": "#444444",
+			"tick_label_size": 0.85,
+			"tick_label_styling": true,
+			"title_color": "#444444",
+			"title_size": 0.9,
+			"title_styling": true
+		},
+		"y": {
+			"gridline_color": "#c0c0c0",
+			"gridline_width": 0.05,
+			"gridlines_styling": true,
+			"line_and_tick_color": "#c0c0c0",
+			"line_and_tick_width": 0.05,
+			"tick_label_color": "#444444",
+			"tick_label_size": 0.85,
+			"tick_label_styling": true,
+			"tick_padding": 1,
+			"title_color": "#444444",
+			"title_size": 0.9,
+			"title_styling": true
+		}
+	},
+	"bindings": {
+		"events": {
+			"date": 0,
+			"filter": 1,
+			"metadata": [2],
+			"name": 3
+		}
+	},
+	"data": {
+		"events": [
+			["Date", "Category", "Source", "Development"],
+			[
+				"9/3/2025",
+				"Threatened",
+				"<a href=\"https://ustr.gov/about/policy-offices/press-office/press-releases/2025/july/ustr-announces-initiation-section-301-investigation-brazils-unfair-trading-practices\" target=\"_blank\">USTR Announcement</a>, <a href=\"https://ustr.gov/sites/default/files/files/Press/Releases/2025/Bzl%20frn%20for%20press%20ofc%20final.pdf\" target=\"_blank\">Federal Register Notice</a>",
+				"Section 301 investigation into Brazil: Expected date for USTR hearing"
+			],
+			[
+				"8/18/2025",
+				"Threatened",
+				"<a href=\"https://ustr.gov/about/policy-offices/press-office/press-releases/2025/july/ustr-announces-initiation-section-301-investigation-brazils-unfair-trading-practices\" target=\"_blank\">USTR Announcement</a>, <a href=\"https://ustr.gov/sites/default/files/files/Press/Releases/2025/Bzl%20frn%20for%20press%20ofc%20final.pdf\" target=\"_blank\">Federal Register Notice</a>",
+				"Section 301 investigation into Brazil: deadline for written comments"
+			],
+			[
+				"8/12/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/05/fact-sheet-president-donald-j-trump-secures-a-historic-trade-win-for-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"Suspension of US-China reciprocal tariffs ends"
+			],
+			[
+				"8/1/2025",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"Suspension of country-specific ad valorem tariffs ends"
+			],
+			[
+				"7/27/2025",
+				"Threatened",
+				"<a href=\"https://www.nbcnews.com/business/business-news/us-european-union-trade-deal-tariff-rate-fifteen-percent-rcna218380\" target=\"_blank\">NBC News </a>",
+				"15% tariff on EU"
+			],
+			[
+				"7/22/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114898069194751986\" target=\"_blank\">Truth Social Announcement</a><br>",
+				"19% tariff on Philippines"
+			],
+			[
+				"7/15/2025",
+				"Threatened",
+				"<a href=\"https://ustr.gov/about/policy-offices/press-office/press-releases/2025/july/ustr-announces-initiation-section-301-investigation-brazils-unfair-trading-practices\" target=\"_blank\">USTR Announcement</a>, <a href=\"https://ustr.gov/sites/default/files/files/Press/Releases/2025/Bzl%20frn%20for%20press%20ofc%20final.pdf\" target=\"_blank\">Federal Register Notice</a>",
+				"Section 301 investigation into Brazil’s unfair trading practices initiated"
+			],
+			[
+				"7/10/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114831716625825473\" target=\"_blank\">Truth Social Announcement</a><br>",
+				"30% tariff on Canada"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114825119138468153\" target=\"_blank\">Truth Social Announcement</a>",
+				"50% tariff on Brazil"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114825639384438689\" target=\"_blank\">Truth Social Announcement</a>",
+				"30% tariff on Sri Lanka"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824019927996260\" target=\"_blank\">Truth Social Announcement</a>",
+				"30% tariff on Algeria"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824016607656018\" target=\"_blank\">Truth Social Announcement</a>",
+				"25% tariff on Brunei"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824021539741481\" target=\"_blank\">Truth Social Announcement</a>",
+				"30% tariff on Iraq"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824018420835079\" target=\"_blank\">Truth Social Announcement</a>",
+				"25% tariff on Moldova"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824023967307505\" target=\"_blank\">Truth Social Announcement</a>",
+				"25% tariff on Libya"
+			],
+			[
+				"7/09/2025",
+				"Threatened",
+				"<a href=\"https://truthsocial.com/@realDonaldTrump/posts/114824014589920439\" target=\"_blank\">Truth Social Announcement</a>",
+				"20% tariff on Philippines"
+			],
+			[
+				"5/8/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/05/general-terms-for-the-united-states-of-america-and-the-united-kingdom-of-great-britain-and-northern-ireland-economic-prosperity-deal/\" target=\"_blank\">White House Statement</a><br>",
+				"Initial framework agreement with the UK"
+			],
+			[
+				"5/4/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-films-hollywood-tariff-movies-415367dff6ae5bb7dc0871db5ac97d48\" target=\"_blank\">AP</a><br>",
+				"100% tariffs on foreign made films"
+			],
+			[
+				"5/3/2025",
+				"Effective",
+				"<a href=\"https://www.nytimes.com/2025/05/03/business/trump-auto-parts-tariffs.html/\" target=\"_blank\">New York Times</a><br>",
+				"25% auto part tariffs"
+			],
+			[
+				"5/29/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/04/amendments-to-adjusting-imports-of-automobiles-and-automobile-parts-into-the-united-states/\" target=\"_blank\">Presidential Action</a><br>",
+				"Process for seeking an import adjustment amount for autos and auto parts to be established by the Secretary of Commerce"
+			],
+			[
+				"5/23/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-tariff-apple-iphone-tax-170021e8fad22878d0183b5d48971087\" target=\"_blank\">AP</a><br>",
+				"50% tariffs on EU"
+			],
+			[
+				"5/23/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-tariff-apple-iphone-tax-170021e8fad22878d0183b5d48971087\" target=\"_blank\">AP</a><br>",
+				"25% tariffs on smartphones"
+			],
+			[
+				"5/2/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/14/2025-06378/amendment-to-reciprocal-tariffs-and-updated-duties-as-applied-to-low-value-imports-from-the-peoples\" target=\"_blank\">EO 14259</a><br>",
+				"De minimis tariffs on Chinese imports"
+			],
+			[
+				"5/14/2025",
+				"Delayed",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/05/fact-sheet-president-donald-j-trump-secures-a-historic-trade-win-for-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"Reciprocal tariffs on China suspended 90 days"
+			],
+			[
+				"5/12/2025",
+				"Delayed",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/05/fact-sheet-president-donald-j-trump-secures-a-historic-trade-win-for-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"Reciprocal tariffs on China suspended 90 days"
+			],
+			[
+				"5/1/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/05/13/2025-08500/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into aircraft and jet engines launched"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"30% tariffs on Algeria delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"32% tariffs on Angola delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"37% tariffs on Bangladesh delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"35% tariffs on Bosnia and Herzegovina delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"37% tariffs on Botswana delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"24% tariffs on Brunei delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"49% tariffs on Cambodia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"11% tariffs on Cameroon delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"13% tariffs on Chad delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"21% tariffs on Côte d`Ivoire delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"11% tariffs on the Democratic Republic of the Congo delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"13%  tariffs on Equatorial Guinea delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"20% tariffs on the European Union delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"41% tariffs on the Falkland Islands delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"32% tariffs on Fiji delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"38% tariffs on Guyana delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"26% tariffs on India delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"32% tariffs on Indonesia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"39% tariffs on Iraq delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"17% tariffs on Israel delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"24% tariffs on Japan delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"20% tariffs on Jordan delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"27% tariffs on Kazakhstan delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"48% tariffs on Laos delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"50% tariffs on Lesotho delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"31% tariffs on Libya delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"37% tariffs on Liechtenstein delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"47% tariffs on Madagascar delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"17% tariffs on Malawi delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"24% tariffs on Malaysia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"40% tariffs on Mauritius delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"31% tariffs on Moldova delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"16% tariffs on Mozambique delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"44% tariffs on Myanmar delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"21% tariffs on Namibia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"30% tariffs on Nauru delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"18% tariffs on Nicaragua delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"14% tariffs on Nigeria delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"33% tariffs on North Macedonia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"15% tariffs on Norway delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"29% tariffs on Pakistan delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"17% tariffs on Philippines delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"37% tariffs on Serbia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"30% tariffs on South Africa delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"25% tariffs on South Korea delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"44% tariffs on Sri Lanka delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"31% tariffs on Switzerland delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"41% tariffs on Syria delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"32% tariffs on Taiwan delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"36% tariffs on Thailand delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"28% tariffs on Tunisia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"22% tariffs on Vanuatu delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"15% tariffs on Venezuela delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"46% tariffs on Vietnam delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"17% tariffs on Zambia delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Delayed",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"18% tariffs on Zimbabwe delayed 90 days"
+			],
+			[
+				"4/9/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/14/2025-06378/amendment-to-reciprocal-tariffs-and-updated-duties-as-applied-to-low-value-imports-from-the-peoples\">EO 14259</a><br>",
+				"Tariffs on China raised to 84%"
+			],
+			[
+				"4/8/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"Tariffs on China increased to 84%"
+			],
+			[
+				"4/8/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/14/2025-06378/amendment-to-reciprocal-tariffs-and-updated-duties-as-applied-to-low-value-imports-from-the-peoples\" target=\"_blank\">EO 14259</a><br>",
+				"De minimis tariffs on Chinese imports increased"
+			],
+			[
+				"4/5/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"10% global baseline tariffs (excludes Canada, Mexico, Russia, Belarus, North Korea, and Cuba)"
+			],
+			[
+				"4/3/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-imports-of-automobiles-and-automobile-parts-into-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"25% auto tariffs"
+			],
+			[
+				"4/22/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/25/2025-07260/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into trucks launched"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"10% global baseline tariffs (excludes Canada, Mexico, Russia, Belarus, North Korea, and Cuba)"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"30% tariffs on Algeria"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"32% tariffs on Angola"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"37% tariffs on Bangladesh"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"35% tariffs on Bosnia and Herzegovina"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"37% tariffs on Botswana"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"24% tariffs on Brunei"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"49% tariffs on Cambodia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"11% tariffs on Cameroon"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"13% tariffs on Chad"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"21% tariffs on Côte d`Ivoire"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"11% tariffs on the Democratic Republic of the Congo"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"13%  tariffs on Equatorial Guinea"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"20% tariffs on the European Union"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"41% tariffs on the Falkland Islands"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"32% tariffs on Fiji"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"38% tariffs on Guyana"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"26% tariffs on India"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"32% tariffs on Indonesia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"39% tariffs on Iraq"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"17% tariffs on Israel"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"24% tariffs on Japan"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"20% tariffs on Jordan"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"27% tariffs on Kazakhstan"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"48% tariffs on Laos"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"50% tariffs on Lesotho"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"31% tariffs on Libya"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"37% tariffs on Liechtenstein"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"47% tariffs on Madagascar"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"17% tariffs on Malawi"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"24% tariffs on Malaysia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"40% tariffs on Mauritius"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"31% tariffs on Moldova"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"16% tariffs on Mozambique"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"44% tariffs on Myanmar (Burma)"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"21% tariffs on Namibia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"30% tariffs on Nauru"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"18% tariffs on Nicaragua"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"14% tariffs on Nigeria"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"33% tariffs on North Macedonia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"15% tariffs on Norway"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"29% tariffs on Pakistan"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"17% tariffs on Philippines"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"37% tariffs on Serbia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"30% tariffs on South Africa"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"25% tariffs on South Korea"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"44% tariffs on Sri Lanka"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"31% tariffs on Switzerland"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"41% tariffs on Syria"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"32% tariffs on Taiwan"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"36% tariffs on Thailand"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"28% tariffs on Tunisia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"22% tariffs on Vanuatu"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"15% tariffs on Venezuela"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"46% tariffs on Vietnam"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"17% tariffs on Zambia"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06063/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and\"_blank\">EO 14257</a><br>",
+				"18% tariffs on Zimbabwe"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"34% tariffs on China"
+			],
+			[
+				"4/2/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\"_blank\">EO 14266</a><br>",
+				"25% tariffs on any country which imports Venezuelan oil"
+			],
+			[
+				"4/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/07/2025-06027/further-amendment-to-duties-addressing-the-synthetic-opioid-supply-chain-in-the-peoples-republic-of\" target=\"_blank\">EO 14256</a><br>",
+				"De minimis exemptions on Chinese imports removed"
+			],
+			[
+				"4/15/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/18/2025-06836/ensuring-national-security-and-economic-resilience-through-section-232-actions-on-processed-critical\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into critical minerals launched"
+			],
+			[
+				"4/10/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/15/2025-06462/modifying-reciprocal-tariff-rates-to-reflect-trading-partner-retaliation-and-alignment\">EO 14266</a><br>",
+				"Tariffs on China raised to 125%"
+			],
+			[
+				"4/1/2025",
+				"Threatened",
+				"<a href=\"https://ustr.gov/sites/default/files/files/Press/Releases/2025/USTRAFRecipPMsFRN_PDF.pdf\" target=\"_blank\">USTR Press Release</a><br>",
+				"USTR report on reciprocal trade due"
+			],
+			[
+				"4/1/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/16/2025-06591/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into semiconductors launched"
+			],
+			[
+				"4/1/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/16/2025-06587/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into pharmaceuticals launched"
+			],
+			[
+				"3/7/2025",
+				"Threatened",
+				"<a href=\"https://www.wsj.com/world/russia/trump-threatens-to-hit-russia-with-sanctions-6534bef8?mod=Searchresults_pos1&page=1\" target=\"_blank\">Wall Street Journal</a><br>",
+				"Tariffs on Russia"
+			],
+			[
+				"3/6/2025",
+				"Canceled",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-tariffs-on-canada-and-mexico-to-minimize-disruption-to-the-automotive-industry/\" target=\"_blank\">Presidential Action</a><br>",
+				"25% tariff on USMCA-compliant goods on Mexico and Canada removed, 25% tariff on potash reduced to 10%"
+			],
+			[
+				"3/4/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-proceeds-with-tariffs-on-imports-from-canada-and-mexico/\" target=\"_blank\">Fact Sheet</a><br>",
+				"25% tariffs imposed on Mexico, Canada"
+			],
+			[
+				"3/3/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/03/further-amendment-to-duties-addressing-the-synthetic-opioid-supply-chain-in-the-peoples-republic-of-china/\" target=\"_blank\">Presidential Action</a><br>",
+				"Tariffs on China raised to 20%"
+			],
+			[
+				"3/26/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-imports-of-automobiles-and-automobile-parts-into-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"25% auto tariffs"
+			],
+			[
+				"3/26/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/03/fact-sheet-president-donald-j-trump-adjusts-imports-of-automobiles-and-automobile-parts-into-the-united-states/\" target=\"_blank\">Fact Sheet</a><br>",
+				"25% auto part tariffs"
+			],
+			[
+				"3/24/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/02/27/2025-03134/proposed-action-in-section-301-investigation-of-chinas-targeting-of-the-maritime-logistics-and\">Federal Register</a><br>",
+				"USTR report proposes fees on Chinese shipping and restrictions on the shipping of US goods"
+			],
+			[
+				"3/24/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/03/imposing-tariffs-on-countries-importing-venezuelan-oil/\" target=\"_blank\">Executive Order</a><br>",
+				"25% tariffs on countries importing Venezuelan oil"
+			],
+			[
+				"3/24/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/03/imposing-tariffs-on-countries-importing-venezuelan-oil/\" target=\"_blank\">Executive Order</a><br>",
+				"25% tariffs on any country which imports Venezuelan oil"
+			],
+			[
+				"3/13/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-tariffs-wine-spirits-200-alcohol-dabead2d0e0fad64dc5e6250293ef016\" target=\"_blank\">AP</a><br>",
+				"200% tariffs on EU wine and alcohol"
+			],
+			[
+				"3/12/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/03/05/2025-03596/implementation-of-duties-on-aluminum-pursuant-to-proclamation-10895-adjusting-imports-of-aluminum\" target=\"_blank\">Federal Register</a><br>",
+				"25% steel and aluminum tariffs"
+			],
+			[
+				"3/12/2025",
+				"Canceled",
+				"<a href=\"https://apnews.com/article/trump-economy-tariffs-stock-musk-business-8a5f28d9bb16e0b8a924d99ead0907fa\" target=\"_blank\">AP</a><br>",
+				"25% steel and aluminum tariffs raise to 50% on Canada"
+			],
+			[
+				"3/11/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-economy-tariffs-stock-musk-business-8a5f28d9bb16e0b8a924d99ead0907fa\" target=\"_blank\">AP</a><br>",
+				"25% steel and aluminum tariffs raise to 50% on Canada"
+			],
+			[
+				"3/1/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/03/addressing-the-threat-to-national-security-from-imports-of-timber-lumber/\" target=\"_blank\">Presidential Action</a><br>",
+				"Investigation into lumber and derivative products under section 232"
+			],
+			[
+				"2/7/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-ishiba-us-japan-cd84a0e7306ab4b8b7e03bc8b76aa06c\" target=\"_blank\">AP</a><br>",
+				"Tariffs on Japan"
+			],
+			[
+				"2/5/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/amendment-to-duties-addressing-the-synthetic-opioid-supply-chain-in-the-peoples-republic-of-china/\" target=\"_blank\">Presidential Action</a><br>",
+				"Removal of de minimis exemption for imports from China"
+			],
+			[
+				"2/4/2025",
+				"Delayed",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/progress-on-the-situation-at-our-northern-border/\" target=\"_blank\">Presidential Action</a><br>",
+				"25% tariffs on Canada delayed for one month"
+			],
+			[
+				"2/4/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-imposes-tariffs-on-imports-from-canada-mexico-and-china/\" target=\"_blank\">Fact Sheet</a><br>",
+				"10% tariffs on China"
+			],
+			[
+				"2/4/2025",
+				"Delayed",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/progress-on-the-situation-at-our-southern-border/\" target=\"_blank\">Presidential Action</a><br>",
+				"25% tariffs on Mexico delayed for one month"
+			],
+			[
+				"2/3/2025",
+				"Threatened",
+				"<a href=\"https://www.reuters.com/markets/europe/european-shares-drop-trumps-tariffs-rattle-markets-2025-02-03/\" target=\"_blank\">Reuters</a><br>",
+				"EU tariffs"
+			],
+			[
+				"2/27/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/eu-us-trump-trade-war-tariffs-e799b44cbaf81b19c37a57d7fd55ee6d\" target=\"_blank\">AP</a><br>",
+				"25% tariffs on EU"
+			],
+			[
+				"2/25/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/addressing-the-threat-to-nationalsecurity-from-imports-of-copper/\" target=\"_blank\">Presidential Action</a><br>",
+				"Investigation into copper under section 232"
+			],
+			[
+				"2/21/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/defending-american-companies-and-innovators-from-overseas-extortion-and-unfair-fines-and-penalties/\" target=\"_blank\">Presidential Action</a><br>",
+				"Digital services tax Sec. 301 investigation"
+			],
+			[
+				"2/21/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-issues-directive-to-prevent-the-unfair-exploitation-of-american-innovation/\" target=\"_blank\">Fact Sheet</a><br>",
+				"Tariffs in response to digital services tax"
+			],
+			[
+				"2/18/2025",
+				"Threatened",
+				"<a href=\"https://www.reuters.com/business/autos-transportation/trump-auto-tariff-rate-will-be-around-25-2025-02-18/\" target=\"_blank\">Reuters</a><br>",
+				"25% pharmaceutical, semiconductor, and auto tariffs"
+			],
+			[
+				"2/13/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-announces-fair-and-reciprocal-plan-on-trade/\" target=\"_blank\">Fact Sheet</a><br>",
+				"Global reciprocal tariffs"
+			],
+			[
+				"2/11/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/adjusting-imports-of-aluminum-into-the-united-states/\" target=\"_blank\">Presidential Action</a><br>",
+				"25% tariffs on steel and aluminum"
+			],
+			[
+				"2/1/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-imposes-tariffs-on-imports-from-canada-mexico-and-china/\" target=\"_blank\">Fact Sheet</a><br>",
+				"10% tariffs on China threatened"
+			],
+			[
+				"2/1/2025",
+				"Threatened",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/02/fact-sheet-president-donald-j-trump-imposes-tariffs-on-imports-from-canada-mexico-and-china/\" target=\"_blank\">Fact Sheet</a><br>",
+				"25% tariffs on Canada and Mexico"
+			],
+			[
+				"12/27/2025",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/16/2025-06591/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Commerce report on semiconductors due"
+			],
+			[
+				"12/27/2025",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/16/2025-06587/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Commerce report on pharmaceuticals due"
+			],
+			[
+				"11/30/2024",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-dollar-dominance-brics-treasury-8572985f41754fe008b98f38180945c3\" target=\"_blank\">AP</a><br>",
+				"100% tariffs on BRICS nations"
+			],
+			[
+				"11/26/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/03/addressing-the-threat-to-national-security-from-imports-of-timber-lumber/\" target=\"_blank\">Presidential Action</a><br>",
+				"Commerce report on timber, lumber, and derivative products due"
+			],
+			[
+				"11/22/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/02/addressing-the-threat-to-nationalsecurity-from-imports-of-copper/\" target=\"_blank\">Presidential Action</a><br>",
+				"Commerce report on copper due"
+			],
+			[
+				"10/12/2025",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/18/2025-06836/ensuring-national-security-and-economic-resilience-through-section-232-actions-on-processed-critical\"_blank\">Federal Register</a><br>",
+				"Commerce report on critical minerals due"
+			],
+			[
+				"1/9/2025",
+				"Threatened",
+				"<a href=\"https://www.bloomberg.com/news/videos/2025-01-07/trump-threatens-denmark-with-tariffs-over-greenland-video\" target=\"_blank\">Bloomberg</a><br>",
+				"Tariffs on Denmark"
+			],
+			[
+				"1/26/2026",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/05/13/2025-08500/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Commerce report on aircraft and jet engines due"
+			],
+			[
+				"1/26/2025",
+				"Threatened",
+				"<a href=\"https://apnews.com/article/trump-tariffs-canada-mexico-colombia-a5ee8bc89b7fbb459ee574c002c90df1\" target=\"_blank\">AP</a><br>",
+				"25% tariffs on Colombia"
+			],
+			[
+				"1/26/2025",
+				"Canceled",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/01/statement-from-the-press-secretary/\" target=\"_blank\">Statement from the Press Secretary</a><br>",
+				"Tariffs on Colombia"
+			],
+			[
+				"1/17/2026",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/04/25/2025-07260/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Commerce report on trucks due"
+			],
+			[
+				"9/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/09/26/2025-18729/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into imports of PPE, Medical Consumables, and Medical Equipment initiated"
+			],
+			[
+				"9/2/2025",
+				"Threatened",
+				"<a href=\"https://www.federalregister.gov/documents/2025/09/26/2025-18749/notice-of-request-for-public-comments-on-section-232-national-security-investigation-of-imports-of\" target=\"_blank\">Federal Register</a><br>",
+				"Section 232 investigation into robotics and industrial machinery initiated"
+			],
+			[
+				"10/14/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/presidential-actions/2025/09/adjusting-imports-of-timber-lumber-and-their-derivative-products-into-the-united-states/\" target=\"_blank\">Presidential Action</a><br>",
+				"Softwood timber and lumber tariff goes into effect"
+			],
+			[
+				"10/28/2025",
+				"Pending",
+				"<a href=\"https://www.federalregister.gov/documents/2025/10/28/2025-19679/initiation-of-section-301-investigation-chinas-implementation-of-commitments-under-the-phase-one\" target=\"_blank\">Federal Register</a><br>",
+				"Section 301 Investigation into China initiated regarding Phase One compliance"
+			],
+			[
+				"11/4/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/10/28/2025-19679/initiation-of-section-301-investigation-chinas-implementation-of-commitments-under-the-phase-one\" target=\"_blank\">Federal Register</a><br>",
+				"US suspends additional reciprocal tariffs on Chinese goods for one year, maintaining existing 10% tariff and reducing fentanyl-related tariffs from 20% to 10%"
+			],
+			[
+				"11/5/2025",
+				"Effective",
+				"<a href=\"https://www.federalregister.gov/documents/2025/10/28/2025-19679/initiation-of-section-301-investigation-chinas-implementation-of-commitments-under-the-phase-one\" target=\"_blank\">Federal Register</a><br>",
+				"China suspends higher tariffs on US goods for one year, keeping existing 10% tariff in place"
+			],
+			[
+				"11/5/2025",
+				"Effective",
+				"<a href=\"https://www.fas.usda.gov/data/china-china-reduces-tariff-rates-us-agricultural-products\" target=\"_blank\">USDA</a><br>",
+				"China removes additional tariffs on 740 product lines covering agricultural goods (chicken, wheat, corn, cotton, soybeans, pork, beef, dairy)"
+			],
+			[
+				"11/9/2025",
+				"Effective",
+				"<a href=\"https://ustr.gov/about/policy-offices/press-office/press-releases/2025/november/ustr-suspension-action-section-301-investigation-chinas-targeting-maritime-logistics-and\" target=\"_blank\">USTR</a><br>",
+				"US suspends actions in Section 301 investigation targeting China's maritime, logistics, and shipbuilding sectors for one year"
+			],
+			[
+				"11/13/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/11/joint-statement-on-framework-for-a-united-states-argentina-agreement-on-reciprocal-trade-and-investment/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-Argentina Framework Agreement on Reciprocal Trade and Investment announced"
+			],
+			[
+				"11/13/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/11/joint-statement-on-framework-for-united-states-ecuador-agreement-on-reciprocal-trade/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-Ecuador Framework Agreement on Reciprocal Trade announced"
+			],
+			[
+				"11/13/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/11/joint-statement-on-framework-for-united-states-el-salvador-agreement-on-reciprocal-trade/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-El Salvador Framework Agreement on Reciprocal Trade announced"
+			],
+			[
+				"11/13/2025",
+				"Pending",
+				"<a href=\"https://www.whitehouse.gov/briefings-statements/2025/11/joint-statement-on-framework-for-united-states-ecuador-agreement-on-reciprocal-trade/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-Guatemala Framework Agreement on Reciprocal Trade announced"
+			],
+			[
+				"11/13/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/11/joint-fact-sheet-on-president-donald-j-trumps-meeting-with-president-lee-jae-myung/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-South Korea Strategic Trade and Investment Agreement factsheet released with additional details"
+			],
+			[
+				"11/13/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/11/joint-fact-sheet-on-president-donald-j-trumps-meeting-with-president-lee-jae-myung/\" target=\"_blank\">White House Announcement</a><br>",
+				"US-South Korea MoU establishing bilateral framework for Korean investment signed"
+			],
+			[
+				"11/14/2025",
+				"Effective",
+				"<a href=\"https://www.whitehouse.gov/fact-sheets/2025/11/fact-sheet-following-trade-deal-announcements-president-donald-j-trump-modifies-the-scope-of-the-reciprocal-tariffs-with-respect-to-certain-agricultural-products/\" target=\"_blank\">The White House</a>",
+				"United States announces that certain agricultural products are exempt from reciprocal tariffs (e.g, coffee, tea, bananas, oranges)"
+			]
+		]
+	},
+	"metadata": {
+		"events": {
+			"0": {
+				"type_id": "datetime$%m/%d/%Y",
+				"type": "datetime",
+				"output_format_id": "datetime$%m/%d/%Y"
+			},
+			"1": {
+				"type_id": "string$arbitrary_string",
+				"type": "string",
+				"output_format_id": "string$arbitrary_string"
+			},
+			"2": {
+				"type_id": "string$arbitrary_string",
+				"type": "string",
+				"output_format_id": "string$arbitrary_string"
+			},
+			"3": {
+				"type_id": "string$arbitrary_string",
+				"type": "string",
+				"output_format_id": "string$arbitrary_string"
+			}
+		}
+	}
+}
