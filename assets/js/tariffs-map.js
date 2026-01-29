@@ -146,8 +146,7 @@ function parseMDY(dateStr) {
 const BASE_TARGET_REGEX = /^Non-reciprocal trade:\s*Individual rate$/i;
 
 // “Additive” items on top of base.
-// ✅ Added: Government of <country> policies  (fixes Brazil = 10 + 40)
-// Keep this list tight to avoid Canada-style over-summing.
+// Keep this list tight to avoid over-summing.
 const ADDITIVE_TARGET_REGEXES = [
 	/russian oil/i,
 	/secondary/i,
@@ -155,8 +154,20 @@ const ADDITIVE_TARGET_REGEXES = [
 	/^Government of .* policies/i,
 ];
 
+// ✅ Exclude “not a fair headline rate” targets from shading math
+// (so 120% de minimis / low value import penalties never become the country rate)
+const EXCLUDE_TARGET_REGEXES = [
+	/low value imports/i,
+	/de\s*minimis/i,
+	/≤\s*\$?\s*800/i,
+	/<=\s*\$?\s*800/i,
+];
+
 // Default for countries with no specific row: global baseline 10% (except US)
 const DEFAULT_BASELINE = 10;
+
+// ✅ Manual overrides (editorial headline values)
+const COUNTRY_RATE_OVERRIDES = new Map([["China", 54]]);
 
 Promise.all([
 	d3.json("assets/india.json"),
@@ -189,6 +200,10 @@ Promise.all([
 
 		// ignore "Global" for country shading
 		if (geography === "Global") continue;
+
+		// ✅ skip excluded targets from aggregation
+		const excluded = EXCLUDE_TARGET_REGEXES.some(rx => rx.test(target));
+		if (excluded) continue;
 
 		if (!countryAgg.has(geography)) {
 			countryAgg.set(geography, {
@@ -231,6 +246,9 @@ Promise.all([
 
 		if (value != null && Number.isFinite(value)) countryData.set(country, value);
 	}
+
+	// ✅ apply manual overrides last (wins)
+	for (const [k, v] of COUNTRY_RATE_OVERRIDES.entries()) countryData.set(k, v);
 
 	const euValue = countryData.get("European Union") ?? null;
 
@@ -278,8 +296,13 @@ Promise.all([
 		.attr("vector-effect", "non-scaling-stroke")
 		.on("mouseover", function (event, d) {
 			const name = normName(d.properties.name);
+
+			// ✅ separate "0%" vs null/undefined
+			const raw = countryData.get(name);
 			const value = getValueForFeature(d);
-			const displayValue = value != null ? `${d3.format(".1f")(value)}%` : "No data";
+
+			const displayValue =
+				raw === 0 ? "0%" : value != null ? `${d3.format(".1f")(value)}%` : "No data";
 
 			tooltip.transition().duration(100).style("opacity", 1);
 			tooltip
@@ -313,7 +336,6 @@ Promise.all([
 		.append("div")
 		.style("display", "grid")
 		.style("grid-template-columns", "repeat(6, auto)")
-
 		.style("gap", "10px")
 		.style("align-items", "center");
 
